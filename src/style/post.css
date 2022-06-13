@@ -1,0 +1,47 @@
+.article-post {
+    margin: 1rem 0;    
+    border-bottom: 1px solid blue;
+    padding: 2rem;
+    padding-left: 0;
+}
+.profile-image {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+.tag {
+   /*  background-color: grey; */
+    padding: .5rem .8rem;
+    border-radius: .5rem;
+    margin: .2rem;
+    border: 1px solid blue;
+    box-shadow: 1px 1px 5px tomato;
+    text-shadow: none;
+}
+.margin-top-bot {
+    margin: 1rem 0;
+}
+.article-post p {
+    font-size: 1.2rem;
+    margin-top: .5rem;
+}
+.article-post .username {
+    color: blue;
+}
+.article-post .likes {
+    border: 1px solid green;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+/* Single Post */
+.post-banner {
+    background-color: yellowgreen;
+    padding: 3rem;
+}
+
+.single-post-body {
+    border-bottom: 1px solid grey;
+    padding: 3rem 0;
+}
