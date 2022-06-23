@@ -1,16 +1,18 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
+import UserProfileBanner from './UserProfileBanner';
 import Pagination from './Pagination';
 import Posts from './Posts';
-import ProfileBanner from  './ProfileBanner';
-import { articlesURL } from '../utils/constant';
-
-class Profile extends React.Component {
+import { articlesURL, profileURL } from '../utils/constant';
+class UserProfile extends React.Component {
     state = {
         activeTab: 'author',
-        articles: []
+        articles: [],
+        profile: null
     };
+    author = this.props.match.params.author;
     fetchData = () => {   
-        fetch(articlesURL+`/?${this.state.activeTab}=${this.props.user.username}`)
+        fetch(articlesURL+`/?${this.state.activeTab}=${this.author}`)
           .then((res) => {
             if (!res.ok) {
               throw new Error('Cannot fetch data for specific user!');
@@ -28,21 +30,31 @@ class Profile extends React.Component {
             });
           });
       }
-    handleClick = (e) => {
+      handleClick = (e) => {
         const name = e.target.name;  
         this.setState({
             activeTab: name
         }, () => this.fetchData());
     }
     componentDidMount() {
+        fetch(profileURL+ this.author).then(res => {
+            if(!res.ok) {
+                return res.json().then(({errors}) => {
+                    return Promise.reject(errors)
+                })
+            }
+            return res.json()}).then(profile => this.setState({profile})).catch(error => console.log(error));
         this.fetchData();
     }
-    render() {
-        const {activeTab} = this.state;
-        const {user} = this.props;
+  render() {
+    
+    const {activeTab, profile} = this.state;
+        if(!profile) {
+            return 
+        }
         return(
             <section>
-                <ProfileBanner user={user}/>
+                <UserProfileBanner author={profile} user ={this.props.user}/>
                 <div className="container profile">
                 <div className="nav flex justify-start">
                     <button className={`profileTab ${activeTab === 'author' ? 'active order-0': 'order-1'}`}
@@ -61,9 +73,6 @@ class Profile extends React.Component {
                 </div>
             </section>
         )
-        }
-    }
-
-    export default Profile;
-
-
+  }
+}
+export default withRouter(UserProfile);

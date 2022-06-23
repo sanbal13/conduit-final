@@ -11,6 +11,8 @@ import { localStorageKey, userVerifyURL } from '../utils/constant';
 import NewPost from './NewPost';
 import Profile from './Profile';
 import Settings from './Settings';
+import UserProfile from './UserProfile';
+
 
 class App extends React.Component {
   state = {
@@ -78,9 +80,12 @@ function AuthenticatedApp(props) {
           </Route>
           <Route path="/profile">
             <Profile user={props.user}/>
-          </Route>
+          </Route>      
+          <Route path="/userProfile/:author">
+            <UserProfile user={props.user}/>
+          </Route>       
           <Route path="/settings">
-            <Settings />
+            <Settings user={props.user}/>
           </Route>
           <Route path="*">
             <NoMatch />

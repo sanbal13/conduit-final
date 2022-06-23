@@ -9,17 +9,17 @@ function Post(props) {
         <article className="article-post">
           <div className="flex">
             <div className="author-info flex">
-              <Link to="/profile">
+              
                 <img
                   src={author.image}
                   alt={author.username}
                   className="profile-image"
                 />
-              </Link>
+              
               <div className="flex flex-column item-start">
-                <Link to="/profile">
+                
                   <div className="username">{author.username}</div>
-                </Link>
+                
                 <div className="article-created-at">
                   {new Date(createdAt).toDateString()}
                 </div>

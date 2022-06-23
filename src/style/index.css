@@ -452,7 +452,16 @@ h1 {
   background-color: rgba(255, 255, 255, .5);
   box-shadow: 1px 1px 2px #000;
 }
-
+.active-link {
+  color: rgb(241, 45, 77);
+  text-shadow: 1px 1px 1px grey;
+  text-decoration: underline;
+}
+.edit-profile-btn {
+  border: 1px solid #000;
+  padding: 1rem;
+  margin-left: 70%;
+}
 
 /************** Footer **************/
 

@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom';
+import { localStorageKey } from '../utils/constant';
+import { withRouter } from 'react-router-dom';
 function Header(props) {
   return (
     <div className="header">
@@ -57,8 +59,15 @@ function AuthHeader() {
           Profile
         </NavLink>
       </li>
+      <li>
+        <button className='logout' onClick={() => handleLogout()}>Logout</button>
+      </li>
     </ul>
   );
 }
+function handleLogout() {
+        localStorage.clear();
+        window.location.href = '/login'; 
+}
 
-export default Header;
+export default withRouter(Header);

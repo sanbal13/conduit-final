@@ -5,6 +5,7 @@ const tagsURL = ROOT_URL + 'tags';
 const signupURL = ROOT_URL + 'users';
 const loginURL = ROOT_URL + 'users/login';
 const userVerifyURL = ROOT_URL + 'user';
+const profileURL = ROOT_URL + 'profiles/'
 
 const localStorageKey = 'app_user';
 
@@ -16,4 +17,5 @@ export {
   loginURL,
   localStorageKey,
   userVerifyURL,
+  profileURL
 };

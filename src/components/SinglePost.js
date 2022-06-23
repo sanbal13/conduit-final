@@ -43,7 +43,7 @@ class SinglePost extends React.Component {
           <div className="container">
             <h1 className="post-title">{article.title}</h1>
             <div className="flex item-center justify-start">
-              <Link to="/profile">
+              <Link to={`/userProfile/${article.author.username}`}>
                 <img
                   src={article.author.image}
                   alt="author"
