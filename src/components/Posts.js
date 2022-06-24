@@ -16,7 +16,7 @@ function Posts(props) {
     return (
       <>
         {articles.map((article) => (
-          <Post key={article.slug} {...article} />
+          <Post key={article.slug} {...article} user={props.user}/>
         ))}
       </>
     );

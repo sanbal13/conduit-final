@@ -175,6 +175,9 @@ a {
   -ms-flex-align: center;
   align-items: center;
 }
+.flex-start {
+  justify-content: flex-start;
+}
 .flex-20 {
   -webkit-box-flex: 0;
   -ms-flex: 0 1 20%;
@@ -462,6 +465,108 @@ h1 {
   padding: 1rem;
   margin-left: 70%;
 }
-
+/* Comment Section */
+.comment-form textarea {
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border: none;
+}
+.comment-form {
+  border: 1px solid grey;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.comment-form .statusbar, .comment-section .statusbar {
+  padding: 1rem;
+  margin-top: -.5rem;  
+  background-color: rgb(219, 216, 216);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;  
+}
+.comment-section {
+  margin: 5rem; 
+  /* border: 2px solid grey; */
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 1px 1px 20px rgb(209, 208, 208);
+}
+.comment-body {
+  padding: 3rem 1rem;
+}
+.comment-image {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: .5rem;
+}
+.comment-form input[type="submit"] {
+  padding: .5rem 1rem;
+  border-radius: .2rem; 
+  border: none;
+  box-shadow: 1px 1px 5px grey;
+  cursor: pointer;
+}
+.comment-form input[type="submit"]:hover {
+  box-shadow: 1px 1px 5px #000;
+}
+.delete {
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: .2rem;
+}
+.delete:hover { 
+  background-color: pink;  
+}
+/* Article Update */
+.edit-article, .delete-article, .follow-btn {
+  padding: .5rem 1rem;  
+  margin: 2rem 0;
+  border-radius: .5rem;
+  text-align: center;
+  cursor: pointer;
+}
+.edit-article, .follow-btn {
+  color: rgb(4, 75, 4);
+  box-shadow: 1px 1px 5px rgb(4, 75, 4);
+}
+.delete-article {
+  color: red;
+  box-shadow: 1px 1px 5px red;
+}
+.edit-article:hover, .follow-btn:hover {
+  background-color: rgb(4, 75, 4);
+  color: #fff;
+  box-shadow: 1px 1px 5px rgb(4, 75, 4);
+}
+.delete-article:hover {
+  background-color: red;
+  color: #fff;
+  box-shadow: 1px 1px 5px red;
+} 
+.existing-tag {
+  background-color: rgb(196, 192, 192);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: .5rem;
+  color: #000;
+}
+.tag-list {
+  width: 100%;
+}
+.delete-tag {
+  display: inline-block;
+  margin-left: .5rem;
+  background-color: #000;
+  padding: .5rem;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer
+}
+.delete-tag:hover {
+  background-color: rgb(222, 219, 219);
+  color: #000;
+  box-shadow: 1px 1px 2px #000;
+}
 /************** Footer **************/
 

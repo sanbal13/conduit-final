@@ -65,7 +65,7 @@ class Home extends React.Component {
           <div className="container flex item-start">
             <section className="flex-70">
               <FeedNav activeTab={activeTab} removeTab={this.removeTab}/>
-              <Posts articles={articles} error={error} />
+              <Posts articles={articles} error={error} user={this.props.user}/>
               <Pagination
                 articlesCount={articlesCount}
                 articlesPerPage={articlesPerPage}

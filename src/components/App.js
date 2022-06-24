@@ -13,7 +13,6 @@ import Profile from './Profile';
 import Settings from './Settings';
 import UserProfile from './UserProfile';
 
-
 class App extends React.Component {
   state = {
     isLoggedIn: false,
@@ -58,9 +57,14 @@ class App extends React.Component {
     return (
       <>
         <Header isLoggedIn={this.state.isLoggedIn} user={this.state.user} />
-        {
-          this.state.isLoggedIn ? <AuthenticatedApp user={this.state.user}/> : <UnauthenticatedApp updateUser={this.updateUser} user={this.state.user}/>
-        }
+        {this.state.isLoggedIn ? (
+          <AuthenticatedApp user={this.state.user} />
+        ) : (
+          <UnauthenticatedApp
+            updateUser={this.updateUser}
+            user={this.state.user}
+          />
+        )}
       </>
     );
   }
@@ -69,51 +73,54 @@ class App extends React.Component {
 function AuthenticatedApp(props) {
   return (
     <Switch>
-          <Route exact path="/">
-            <Home  />
-          </Route>         
-          <Route path="/article/:slug">    
-          <SinglePost user={props.user}/> 
-          </Route> 
-          <Route path="/new-post">
-            <NewPost user={props.user}/>
-          </Route>
-          <Route path="/profile">
-            <Profile user={props.user}/>
-          </Route>      
-          <Route path="/userProfile/:author">
-            <UserProfile user={props.user}/>
-          </Route>       
-          <Route path="/settings">
-            <Settings user={props.user}/>
-          </Route>
-          <Route path="*">
-            <NoMatch />
-          </Route>
-        </Switch>
-  )
+      <Route exact path="/">
+        <Home user={props.user} />
+      </Route>
+      <Route path="/article/:slug">
+        <SinglePost user={props.user} />
+      </Route>
+      <Route path="/new-post">
+        <NewPost user={props.user} />
+      </Route>
+      <Route path="/editor/:slug">
+        <NewPost user={props.user} />
+      </Route>
+      <Route path="/profile">
+        <Profile user={props.user} />
+      </Route>
+      <Route path="/userProfile/:author">
+        <UserProfile user={props.user} />
+      </Route>
+      <Route path="/settings">
+        <Settings user={props.user} />
+      </Route>
+      <Route path="*">
+        <NoMatch />
+      </Route>
+    </Switch>
+  );
 }
 
 function UnauthenticatedApp(props) {
   return (
     <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/signup">
-            <Signup updateUser={props.updateUser} />
-          </Route>
-          <Route path="/login">
-            <Login updateUser={props.updateUser} />
-          </Route>
-          <Route path="/article/:slug">    
-          <SinglePost user={props.user}/> 
-          </Route>    
-          <Route path="*">
-            <NoMatch />
-          </Route>
-        </Switch>
-  )
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/signup">
+        <Signup updateUser={props.updateUser} />
+      </Route>
+      <Route path="/login">
+        <Login updateUser={props.updateUser} />
+      </Route>
+      <Route path="/article/:slug">
+        <SinglePost user={props.user} />
+      </Route>
+      <Route path="*">
+        <NoMatch />
+      </Route>
+    </Switch>
+  );
 }
 
 export default App;
