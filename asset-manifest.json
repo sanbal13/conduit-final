@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/conduit-final/static/css/main.52f0d036.css",
+    "main.js": "/conduit-final/static/js/main.ea081259.js",
+    "index.html": "/conduit-final/index.html",
+    "main.52f0d036.css.map": "/conduit-final/static/css/main.52f0d036.css.map",
+    "main.ea081259.js.map": "/conduit-final/static/js/main.ea081259.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52f0d036.css",
+    "static/js/main.ea081259.js"
+  ]
+}
