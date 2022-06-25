@@ -183,7 +183,7 @@ class SinglePost extends React.Component {
                 </div>
               </div>
               <div>
-                {article.author.username === this.props.user.username ? (
+                {this.props.user && (article.author.username === this.props.user.username ? (
                   <>
                   <Link to={`/editor/${article.slug}`} className='edit-article'>Edit Article </Link> 
                     <div
@@ -200,7 +200,7 @@ class SinglePost extends React.Component {
                   >
                     + Follow {article.author.username}
                   </div>
-                )}
+                ))}
               </div>
             </div>
           </div>

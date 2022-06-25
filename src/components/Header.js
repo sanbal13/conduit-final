@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import { localStorageKey } from '../utils/constant';
 import { withRouter } from 'react-router-dom';
 function Header(props) {
   return (

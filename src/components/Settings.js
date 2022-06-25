@@ -59,7 +59,7 @@ class Settings extends React.Component {
       }).then((data) => console.log(data)).catch((error) =>  console.log(error));
   }
   render() {
-    const { image, username, bio, email, password, errors } = this.state;
+    const { image, username, bio, email, password } = this.state;
     return (
       <div className="container settings">
         <center>
