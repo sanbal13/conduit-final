@@ -68,7 +68,7 @@ class NewPost extends React.Component {
             title,
             description,
             body,
-            tagList: this.state.tagList.concat(tags.split(','))
+            tagList: this.state.tagList.concat(tags.split(',')).filter(Boolean)
           }
         })
       }).then(res => {

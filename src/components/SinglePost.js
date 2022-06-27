@@ -183,24 +183,30 @@ class SinglePost extends React.Component {
                 </div>
               </div>
               <div>
-                {this.props.user && (article.author.username === this.props.user.username ? (
-                  <>
-                  <Link to={`/editor/${article.slug}`} className='edit-article'>Edit Article </Link> 
+                {this.props.user &&
+                  (article.author.username === this.props.user.username ? (
+                    <>
+                      <Link
+                        to={`/editor/${article.slug}`}
+                        className="edit-article"
+                      >
+                        Edit Article{' '}
+                      </Link>
+                      <div
+                        className="delete-article"
+                        onClick={() => this.handleArticleDelete()}
+                      >
+                        Delete Article
+                      </div>
+                    </>
+                  ) : (
                     <div
-                      className="delete-article"
-                      onClick={() => this.handleArticleDelete()}
+                      className="follow-btn"
+                      onClick={() => this.handleFollow(article.author.username)}
                     >
-                      Delete Article
+                      + Follow {article.author.username}
                     </div>
-                  </>
-                ) : (
-                  <div
-                    className="follow-btn"
-                    onClick={() => this.handleFollow(article.author.username)}
-                  >
-                    + Follow {article.author.username}
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
           </div>
@@ -259,14 +265,16 @@ class SinglePost extends React.Component {
                         />
                         {comment.author.username}
                       </div>
-                      {comment.author.username === this.props.user.username && (
-                        <div
-                          className="delete"
-                          onClick={() => this.handleDelete(comment.id)}
-                        >
-                          🗑
-                        </div>
-                      )}
+                      {this.props.user &&
+                        comment.author.username ===
+                          this.props.user.username && (
+                          <div
+                            className="delete"
+                            onClick={() => this.handleDelete(comment.id)}
+                          >
+                            🗑
+                          </div>
+                        )}
                     </div>
                   </div>
                 );
