@@ -17,7 +17,7 @@ class App extends React.Component {
   state = {
     isLoggedIn: false,
     user: null,
-    isVerifying: true,
+    isVerifying: false,
   };
   componentDidMount() {
     let storageKey = localStorage[localStorageKey];

@@ -16,7 +16,6 @@ class NewPost extends React.Component {
       tags: '',
     },
   };
-
   handleChange = (event) => {
     const { name, value } = event.target;
     let errors = { ...this.state.errors };
@@ -49,9 +48,10 @@ class NewPost extends React.Component {
           });
         })
         .catch((error) => console.log(error));
+    } 
     }
-  };
-
+    
+  
   handleSubmit = (event) => {
     event.preventDefault();
     const { title, description, body, tags } = this.state;
